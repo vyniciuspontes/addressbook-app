@@ -1,6 +1,9 @@
 <div class="row mt-3">
   <div class="col-12">
-    <button class="btn btn-success" routerLink="new">New Contact</button>
+    <button type="button" class="btn btn-primary">
+      <fa name="edit"></fa>
+      Edit
+    </button>
   </div>
 </div>
 <hr>
@@ -13,8 +16,8 @@
     CPF: <p>{{ contact.cpf }}</p>
 
     <div *ngFor="let address of contact.addresses">
-      <p>{{ address.publicPlace }}  - {{ address.number }} - {{ address.complement }}</p>
-      <p>{{ address.city }}  - {{ address.state }} - {{ address.postalCode }}</p>
+      <p>{{ address.publicPlace }} - {{ address.number }} - {{ address.complement }}</p>
+      <p>{{ address.city }} - {{ address.state }} - {{ address.postalCode }}</p>
 
       <hr>
     </div>

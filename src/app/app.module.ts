@@ -9,16 +9,22 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './addressbook/shared/auth.interceptor';
 import {DataStorageService} from './addressbook/shared/data-storage.service';
 import {ContactService} from './addressbook/shared/addressbook.service';
+import { AddressStartComponent } from './addressbook/address-start/address-start.component';
+import { AddressEditComponent } from './addressbook/address-edit/address-edit.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddressbookComponent,
     AddressListComponent,
-    AddressDetailsComponent
+    AddressDetailsComponent,
+    AddressStartComponent,
+    AddressEditComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, AppRoutingModule, AngularFontAwesomeModule
   ],
   providers: [
     ContactService,
