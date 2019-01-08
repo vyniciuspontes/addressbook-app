@@ -1,0 +1,23 @@
+<div class="row mt-3">
+  <div class="col-12">
+    <button class="btn btn-success" routerLink="new">New Contact</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12" *ngIf="contact !== undefined">
+
+    <h1>{{ contact.firstName + " " + contact.lastName }}</h1>
+
+    Born Date: <p>{{ contact.bornDate }}</p>
+    CPF: <p>{{ contact.cpf }}</p>
+
+    <div *ngFor="let address of contact.addresses">
+      <p>{{ address.publicPlace }}  - {{ address.number }} - {{ address.complement }}</p>
+      <p>{{ address.city }}  - {{ address.state }} - {{ address.postalCode }}</p>
+
+      <hr>
+    </div>
+
+  </div>
+</div>
