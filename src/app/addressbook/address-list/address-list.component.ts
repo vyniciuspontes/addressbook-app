@@ -15,19 +15,12 @@ export class AddressListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contactService.recipesChanged.subscribe((contacts: Contact[]) => {
+    this.contactService.contactsChanged.subscribe((contacts: Contact[]) => {
       this.contacts = contacts;
     });
-    this.contactService.getContacts().subscribe(
-      (contacts: Contact[]) => {
-        console.log(contacts);
-        this.contacts = contacts;
-      }
-    );
-  }
 
-  onContactClick(contact: Contact){
-    this.contactService.setCurrentContact(contact);
+    this.contactService.retrieveContacts();
+
   }
 
 

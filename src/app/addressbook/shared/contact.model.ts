@@ -1,6 +1,7 @@
 import {Address} from './address.model';
 
 export class Contact {
+  public id: string;
   public firstName: string;
   public lastName: string;
   public cpf: string;
@@ -9,7 +10,8 @@ export class Contact {
   public addresses: Address[];
 
 
-  constructor(firstName: string, lastName: string, cpf: string, bornDate: Date, applicationUserId: string) {
+  constructor(id: string, firstName: string, lastName: string, cpf: string, bornDate: Date, applicationUserId: string) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.bornDate = bornDate;

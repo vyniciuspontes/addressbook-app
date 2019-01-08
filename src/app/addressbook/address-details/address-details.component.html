@@ -1,9 +1,13 @@
 <div class="row mt-3">
-  <div class="col-12">
-    <button type="button" class="btn btn-primary">
+  <div class="col-6">
+    <button type="button" class="btn btn-primary" [routerLink]="['edit']">
       <fa name="edit"></fa>
       Edit
     </button>
+  </div>
+  <div class="col-6">
+    <button class="btn btn-danger float-right" routerLink="new"><fa name="trash"></fa>
+      Delete</button>
   </div>
 </div>
 <hr>
