@@ -13,6 +13,9 @@ import { AddressStartComponent } from './addressbook/address-start/address-start
 import { AddressEditComponent } from './addressbook/address-edit/address-edit.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {AppRoutingModule} from './app-routing.module';
+import { HeaderComponent } from './addressbook/header/header.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {AppRoutingModule} from './app-routing.module';
     AddressListComponent,
     AddressDetailsComponent,
     AddressStartComponent,
-    AddressEditComponent
+    AddressEditComponent,
+    HeaderComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, AngularFontAwesomeModule
