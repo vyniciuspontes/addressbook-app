@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../shared/contact.model';
 import {ContactService} from '../shared/addressbook.service';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
@@ -25,11 +25,19 @@ export class AddressDetailsComponent implements OnInit {
       this.id = params['id'];
       this.setContact(this.id);
     });
+
+    this.contactService.contactsChanged.subscribe(() => {
+      this.setContact(this.id);
+    });
   }
 
-  setContact(id: string){
+  setContact(id: string) {
     this.contact = this.contactService.getContact(id);
   }
 
 
+  onDeleteContact() {
+    this.contactService.deleteContact(this.id);
+    this.router.navigate(['/addressbook']);
+  }
 }

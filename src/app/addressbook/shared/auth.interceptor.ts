@@ -11,7 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
     console.log('Intercepted!', req);
     const copiedReq = req.clone({
       headers: req.headers.set('Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb250ZXMudnluaWNpdXNAZ21haWwuY29tIiwiZXhwIjoxNTQ3ODUyMjkxfQ.VyDjuggpsyODBCTUqsF2dGvQbxbK_aplUjT5VsNbth0')
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb250ZXMudnluaWNpdXNAZ21haWwuY29tIiwiZXhwIjoxNTQ3ODc0MjA2fQ.81joJnRZrACjhe6ryHN0pMkESaDL86mvglo3v__g1i0')
     });
     return next.handle(copiedReq);
   }

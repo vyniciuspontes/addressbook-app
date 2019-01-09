@@ -1,16 +1,160 @@
-<div class="row mt-3">
-  <div class="col-6">
-    <button type="button" class="btn btn-primary">
-      <fa name="save"></fa>
-      Save
-    </button>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="row mt-3">
+    <div class="col-6">
+      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">
+        <fa name="save"></fa>
+        Save
+      </button>
+    </div>
+    <div class="col-6">
+      <button type="button" class="btn btn-danger float-right" (click)="onCancel()">
+        <fa name="ban"></fa>
+        Cancel
+      </button>
+    </div>
   </div>
-  <div class="col-6">
-    <button class="btn btn-danger float-right" (click)="onCancel()"><fa name="ban"></fa>
-      Cancel</button>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="firstName">First Name</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('firstName').touched && !contactForm.get('firstName').valid" type="text" id="firstName" formControlName="firstName" name="firstName">
+          <div class="invalid-feedback">
+            Please insert a first name.
+          </div>
+        </div>
+        <div class="form-group col-6">
+          <label for="lastName">Last Name</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('lastName').touched && !contactForm.get('lastName').valid" type="text" id="lastName" formControlName="lastName" name="lastName">
+          <div class="invalid-feedback">
+            Please insert a last name.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-3">
+          <label for="cpf">CPF</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('cpf').touched && !contactForm.get('cpf').valid" type="text" id="cpf" formControlName="cpf" name="cpf">
+          <div class="invalid-feedback">
+            Please insert a valid cpf.
+          </div>
+        </div>
+        <div class="form-group col-4">
+          <label for="bornDate">Born Date</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('bornDate').touched && !contactForm.get('bornDate').valid" type="date" id="bornDate" formControlName="bornDate" name="cpf">
+          <div class="invalid-feedback">
+            Please insert a valid date.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="email">Email</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('email').touched && !contactForm.get('email').valid" type="text"
+                 id="email" formControlName="email" name="email">
+          <div class="invalid-feedback">
+            Please a valid email.
+          </div>
+        </div>
+        <div class="form-group col-6">
+          <label for="phone">Phone</label>
+          <input class="form-control" [class.is-invalid]="contactForm.get('phone').touched && !contactForm.get('phone').valid" type="text"
+                 id="phone" formControlName="phone" name="phone">
+          <div class="invalid-feedback">
+            Please a valid phone.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <label for="addresses">Addresses</label>
+      <div class="row" id="addresses" formArrayName="addresses">
+        <div class="col-12">
+          <div class="row mb-2" *ngFor="let addressCtrl of addressesControls; let i=index" [formGroupName]="i">
+            <div class="col-12">
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="publicPlace">Public Place</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('publicPlace').touched && !addressCtrl.get('publicPlace').valid"
+                         type="text" id="publicPlace" formControlName="publicPlace"
+                         name="publicPlace">
+                  <div class="invalid-feedback">
+                    Please insert a public place.
+                  </div>
+                </div>
+                <div class="form-group col-3">
+                  <label for="number">Number</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('number').touched && !addressCtrl.get('number').valid"
+                         type="text" id="number" formControlName="number"
+                         name="number">
+                  <div class="invalid-feedback">
+                    Please insert valid number.
+                  </div>
+                </div>
+                <div class="form-group col-3">
+                  <label for="complement">Complement</label>
+                  <input class="form-control"
+                         type="text" id="complement" formControlName="complement"
+                         name="complement">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="publicPlace">Postal Code</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('postalCode').touched && !addressCtrl.get('postalCode').valid"
+                         type="text" id="postalCode" formControlName="postalCode"
+                         name="postalCode">
+                  <div class="invalid-feedback">
+                    Please insert a postal code.
+                  </div>
+                </div>
+                <div class="form-group col-6">
+                  <label for="publicPlace">District</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('district').touched && !addressCtrl.get('district').valid"
+                         type="text" id="district" formControlName="district"
+                         name="district">
+                  <div class="invalid-feedback">
+                    Please insert a district.
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="publicPlace">City</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('city').touched && !addressCtrl.get('city').valid"
+                         type="text" id="city" formControlName="city"
+                         name="city">
+                  <div class="invalid-feedback">
+                    Please insert a city.
+                  </div>
+                </div>
+                <div class="form-group col-6">
+                  <label for="publicPlace">State</label>
+                  <input class="form-control" [class.is-invalid]="addressCtrl.get('state').touched && !addressCtrl.get('state').valid"
+                         type="text" id="state" formControlName="state"
+                         name="state">
+                  <div class="invalid-feedback">
+                    Please insert a district.
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+              <div class="col-3">
+                <button type="button" class="btn btn-danger" (click)="onRemoveAddress(i)">Remove Address</button>
+              </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-success" type="button" (click)="onAddAddress()">Add Address</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<hr>
-<div class="row">
-  <div class="col-12"></div>
-</div>
+
+</form>

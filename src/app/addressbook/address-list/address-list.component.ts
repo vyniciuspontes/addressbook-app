@@ -15,6 +15,7 @@ export class AddressListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('initializing list');
     this.contactService.contactsChanged.subscribe((contacts: Contact[]) => {
       this.contacts = contacts;
     });

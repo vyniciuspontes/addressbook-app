@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-12">
     <div class="list-group">
-      <a *ngFor="let contactElement of contacts; let i = index" [routerLink]="[contactElement.id]"
+      <a *ngFor="let contactElement of contacts; let i = index" [routerLink]="[contactElement.id]" [routerLink]="[i]" routerLinkActive="active"
          style="cursor: pointer" class="list-group-item list-group-item-action">
         <h4>{{ contactElement.firstName + " " + contactElement.lastName}}</h4>
       </a>

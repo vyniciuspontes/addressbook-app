@@ -15,6 +15,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './addressbook/header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule, AngularFontAwesomeModule
+    BrowserModule, HttpClientModule, AppRoutingModule, AngularFontAwesomeModule, FormsModule, ReactiveFormsModule
   ],
   providers: [
     ContactService,
