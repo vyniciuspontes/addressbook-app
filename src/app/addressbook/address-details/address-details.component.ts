@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Contact} from '../shared/contact.model';
-import {ContactService} from '../shared/addressbook.service';
+import {Contact} from '../../shared/contact.model';
+import {ContactService} from '../../shared/addressbook.service';
 import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 

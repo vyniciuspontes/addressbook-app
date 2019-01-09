@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Login</h3>
+
+          <div class="card-text">
+            <form (ngSubmit)="onLogin(f)" #f="ngForm">
+              <div class="form-group">
+                <input class="form-control" placeholder="username" name="username"
+                       type="username" ngModel autofocus required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="Password"
+                       name="password" type="password" ngModel required>
+              </div>
+              <div class="form-group">
+                <a routerLink="/signup">Registrate a new user</a>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-lg btn-primary btn-block"
+                       value="Login" [disabled]="f.invalid">
+              </div>
+            </form>
+            <div *ngIf="error" class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{ errorMessage }}
+              <button type="button" class="close" (click)="error=false" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

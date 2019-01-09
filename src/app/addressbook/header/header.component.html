@@ -12,9 +12,9 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" style="cursor: pointer" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+          <a class="nav-link dropdown-toggle" style="cursor: pointer" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ username }}</a>
           <div class="dropdown-menu" aria-labelledby="dropdown07">
-            <a style="cursor: pointer" class="dropdown-item">Logout</a>
+            <a style="cursor: pointer" class="dropdown-item" (click)="onLogout()">Logout</a>
           </div>
         </li>
       </ul>

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from '../shared/contact.model';
-import {ContactService} from '../shared/addressbook.service';
+import {Contact} from '../../shared/contact.model';
+import {ContactService} from '../../shared/addressbook.service';
 
 @Component({
   selector: 'app-address-list',
